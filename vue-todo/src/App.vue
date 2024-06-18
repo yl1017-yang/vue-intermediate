@@ -33,24 +33,30 @@ export default {
     text-align: center;
     background: #eee;
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #333;
     line-height: 1.4;
+    margin: 0;
+    padding: 0;
   }
   input {
-    border : 1px solid #ccc;
-    width: 200px;
-    height: 50px;
+    /* border : 1px solid #333; */
+    /* width: 240px;
+    height: 46px; */
     font: inherit;
   }
   button {
-    background :#333;
-    height: 50px;
+    /* background :#333;
+    height: 50px; */
     font: inherit;
-    color: #fff;
-    padding: 0 20px;
+    /* color: #fff; */
+    padding: 0 30px;
     border: 0;
+    cursor: pointer;
+  }
+  ul, li {
+    list-style: none;
   }
   .shadow {
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);

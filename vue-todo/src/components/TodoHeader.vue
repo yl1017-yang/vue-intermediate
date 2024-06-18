@@ -27,6 +27,7 @@ export default {
 
 <style scoped>
   h1 {
+    font-size: 4rem;
     font-weight: 800;
     margin: 2.5rem 0 1.5rem;
   }
