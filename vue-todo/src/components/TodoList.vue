@@ -1,7 +1,8 @@
 <template>
   <div>
     <ul>
-      <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem.item" class="shadow">
+      <!-- props 내릴때 todoItems 을 propsdata로 수정 -->
+      <li v-for="(todoItem, index) in propsdata" v-bind:key="todoItem.item" class="shadow">
         <i class="fas fa-check checkBtn" v-bind:class="{checkBtnCompleted: todoItem.completed}" v-on:click="toggleComplete(todoItem, index)"></i>
 
         <span v-bind:class="{textCompleted: todoItem.completed}">{{ todoItem.item }}</span>
@@ -9,7 +10,7 @@
         <!-- <button v-on:click="removeTodo">삭제</button> -->
         <!-- index 는 array 0 을 가리킴 -->
         <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
-          <i class="fas fa-trash-alt"></i>
+          <i class="fas fa-trash-alt"> 삭제</i>
         </span>
       </li>
     </ul>
@@ -18,13 +19,9 @@
 
 <script>
 export default {
-  name: 'TodoList',  
+  name: 'TodoList',
 
-  data() {
-    return {
-      todoItems: []
-    };
-  },
+  props: ['propsdata'],
 
   methods: {
     removeTodo(todoItem, index) {
@@ -43,29 +40,6 @@ export default {
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
     }
   },
-
-  created: function() {
-    // vue 인스턴스 생성되자마자 호출되는 라이프사이클 훅
-    console.log('created');
-
-    // 로컬스토리지(브라우저 저장소)에 데이타가 있다면 todoItems 에 푸시 / key값은 로컬스토리지에 있는 값
-    if (localStorage.length > 0) {
-      for (var i = 0; i < localStorage.length; i++) {
-        if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
-          this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-          console.log(JSON.parse(localStorage.getItem(localStorage.key(i))));
-          // this.todoItems.push(localStorage.key(i));
-        }
-        
-        console.log(localStorage.key(i)); //동작 하자마자 localStorage.key 값 실행
-      }
-    }
-  },  
-
-  mounted() {
-    
-  },
-
   
 };
 </script>

@@ -5,7 +5,7 @@
     <input type="text" v-model="newTotoItem" v-on:keyup.enter="addTodo">
     <div class="addContainer" v-on:click="addTodo">
       <!-- {{ newTotoItem }} -->
-      <i class="fas fa-plus addBtn"></i>
+      <i class="fas fa-plus addBtn"> 입력</i>
     </div>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
   data: function() {
     return {
       newTotoItem : ""
-    };
+    }
   },
 
   mounted() {
