@@ -39,6 +39,8 @@ export default {
     line-height: 1.4;
     margin: 0;
     padding: 0;
+    border: 0;
+    box-sizing:border-box;-webkit-box-sizing:border-box;
   }
   input {
     /* border : 1px solid #333; */
@@ -57,6 +59,8 @@ export default {
   }
   ul, li {
     list-style: none;
+    padding: 0;
+    margin: 0;
   }
   .shadow {
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);

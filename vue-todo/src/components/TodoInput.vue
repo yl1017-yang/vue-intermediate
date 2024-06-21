@@ -26,10 +26,15 @@ export default {
 
   methods: {
     addTodo: function() {
-      console.log(this.newTotoItem);
-      localStorage.setItem(this.newTotoItem, this.newTotoItem);      
-      //this.newTotoItem = '';
-      this.clearInput();      
+      if (this.newTotoItem !== '') {  //neTodoItem 값이 무조건 있을때
+        var obj = {completed: false, item: this.newTotoItem};
+        console.log(this.newTotoItem);
+        localStorage.setItem(this.newTotoItem, JSON.stringify(obj));
+        // localStorage.setItem(this.newTotoItem, this.newTotoItem);
+        //this.newTotoItem = '';
+        this.clearInput();  
+      }
+    
     },
     clearInput: function() {
       this.newTotoItem = '';
